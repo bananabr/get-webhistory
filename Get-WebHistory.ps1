@@ -144,7 +144,7 @@ if($ComputerName.length -eq 0){
 	$hostname = $ComputerName
 }
 
-Add-Type -Path "C:\Program Files\System.Data.SQLite\2010\bin\System.Data.SQLite.dll"
+Add-Type -Path "C:\Program Files\System.Data.SQLite\2015\bin\System.Data.SQLite.dll"
 $now = [DateTime]::Now.ToUniversalTime().toString('yyyyMMddHHmmssffff')
 
 #Google Chrome
@@ -157,7 +157,6 @@ $xp_db_local_state_file_path = "\\$hostname\C$\Documents and Settings\$UserName\
 $xp_br_local_state_file_path = "\\$hostname\C$\Documents and Settings\$UserName\Configurações locais\Dados de aplicativos\Google\Chrome\User Data\Local State"
 $vista_local_state_file_path = "\\$hostname\C$\Users\$UserName\AppData\Local\Google\Chrome\User Data\Local State"
 
-$json=Get-Content "C:\Users\danielb.santos\AppData\Local\Google\Chrome\User Data\Local State"
 $chrome_history_found=$false
 if(Test-Path $vista_local_state_file_path){
 	if($Verbose){Write-Host "Windows Vista+ Google Chrome local state file detected"}
