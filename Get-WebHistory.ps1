@@ -1,6 +1,7 @@
 Param 
 ( 
-    [string]$ComputerName = "", 
+    [string]$ComputerName = "",
+	[string]$SQLiteDllPath = "C:\Program Files\System.Data.SQLite\2015\bin\System.Data.SQLite.dll",
     [string]$UserName = "",
 	[boolean]$Verbose=$false
 )
@@ -144,7 +145,7 @@ if($ComputerName.length -eq 0){
 	$hostname = $ComputerName
 }
 
-Add-Type -Path "C:\Program Files\System.Data.SQLite\2015\bin\System.Data.SQLite.dll"
+Add-Type -Path $SQLiteDllPath
 $now = [DateTime]::Now.ToUniversalTime().toString('yyyyMMddHHmmssffff')
 
 #Google Chrome
